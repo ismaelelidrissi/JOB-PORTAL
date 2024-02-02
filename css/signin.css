@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+::-webkit-scrollbar{
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-clip: content-box;
+    border-radius: 100vw;
+    background-color: var(--secondary-color);
+  } 
+:root{
+    --primary-color:#363636;
+    --secondary-color:#629298;
+    --word-color:#eeeeee;
+    --word-link-color:#917760;
+    --border-color:#2d2d2d;
+}
+/* body::-webkit-scrollbar{
+    display: none;
+} */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html{
+    font-size: 10px;
+    font-family: 'Open Sans',sans-serif;
+    view-transition-name: signin;
+    font-weight: 500;
+}
+::view-transition-old{
+    animation-timing-function: ease-in;
+    animation-duration: .9s;
+}
+body{
+    background: url(../img/willian-justen-de-vasconcellos-jUCQRQeRs3k-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    background-color: #191919;
+}
+
+main{
+    /* width: 90vw;
+    height: 60svh; */
+    position: absolute;
+    inset: 12% 8% 12% 8%;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+}
+.filter-blur{
+    background: rgba(240, 227, 227, 0.1);
+    backdrop-filter: blur(7px);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+.Sign{
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding-block-start: 4rem;
+    gap: 4rem;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--word-color);
+    /* padding: 1rem; */
+
+    position: relative;
+}
+h2{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 2.3rem;
+    margin-block-end: 2rem;
+}
+.inp{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    row-gap: 2rem;
+}
+input{
+    width: 80%;
+    height: 49px;
+    padding-inline: 1rem;
+    border-radius: 2px;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    outline: 1px solid transparent;
+    color: var(--word-color);
+    /* box-shadow: 0 2px 20px 0 var(--border-color); */
+    transition: border .6s ease;
+}
+input:focus{
+    border: 2px solid var(--secondary-color);
+}
+input::placeholder{
+    font-weight: 500;
+    /* padding-inline-start: 1rem; */
+}
+.btn{
+    width: 80%;
+    height: 48px;
+    /* display: flex;
+    justify-content: flex-start; */
+}
+button{
+    width: 35%;
+    height: 100%;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: background-color .6s , border .3s;
+}
+button::after{
+    content: '';
+    position: absolute;
+    width: 10%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    z-index: -1;
+    scale: 0;
+    background-color: var(--secondary-color);
+    transition: scale 650ms ease-in,opacity 350ms ease-in;
+}
+button:hover::after{
+    scale: 20;
+    opacity: 1;
+}
+/* button:hover{
+    background-color: var(--secondary-color);
+    border:2px solid transparent;
+} */
+button > a{
+    font-weight: 600;
+    font-size: 1.9rem;
+    text-decoration: none;
+    color: var(--word-color);
+    transition: color 500ms ease-in;
+}
+button:hover > a{
+    color: var(--primary-color);
+}
+.link{
+    text-align: center;
+    line-height: 2.4rem;
+    color: var(--word-color);
+}
+
+.link a{
+    text-decoration: none;
+    color: var(--word-link-color);
+    /* letter-spacing: 1px; */
+    margin-left: 1px;
+    transition: color .6s ease;
+}
+.link a:hover{
+    color: var(--secondary-color);
+}
+.img{
+    background-image: url(../img/thisisengineering-raeng-64YrPKiguAE-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+
+    position: relative;
+    isolation: isolate;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+    
+}
+.img::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--primary-color);
+    opacity: .5;
+}
+.img h1{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 3rem;
+}
+.img h5{
+    font-weight: 400;
+    font-size: 1.9rem;
+    letter-spacing: 1px;
+}
+@media (max-width:765px) {
+    main{
+        width: 100vw;
+        height: 100svh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 35% 65%;
+        grid-template-areas: "img" "inp";
+    }
+    .inp{
+        grid-area: inp;
+    }
+    .img{
+        grid-area: img;
+        line-height: 4rem;
+    }
+    .img h1{
+        font-size: 2.5rem;
+    }
+}
+@media (min-width:766px) and (max-width:998px){
+    main{
+        width: 98vw;
+        height: 70svh;
+        border-radius: 12px;
+    }
+    .Sign{
+        row-gap: 4rem;
+    }
+    h2{
+        margin-block-end: 4rem
+    }
+    .inp{
+        row-gap: 2.5rem;
+    }
+    input{
+        height: 59px;
+    }
+    .btn{
+        height: 59px;
+    }
+    button{
+        width: 45%;
+    }
+    .link{
+        margin-block-start: 5rem;
+    }
+}

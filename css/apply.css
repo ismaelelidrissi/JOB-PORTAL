@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-clip: content-box;
+  border-radius: 100vw;
+  background-color: var(--secondary-color);
+}
+
+:root{
+    --primary-color:rgba(42, 42, 42, 0.9);
+    --third-color:#232329;
+    --secondary-color:#629298;
+    --active-color:#d8d6d7;
+    --word-color:#d8d6d7;
+    --word-link-color:#d8d6d7;
+    --border-color:black;
+}
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+*::selection{
+    background-color: var(--secondary-color);
+    color: var(--word-color);
+}
+
+html{
+    font-family: "Open Sans",sans-serif;
+    
+}
+/* ::view-transition-new{
+    animation-timing-function: ease-in;
+    animation-duration: .9s;
+} */
+
+body{
+    margin-bottom: 10px;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+header{
+    height: 56px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+}
+/* header::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--secondary-color);
+    opacity: 0.3;
+} */
+ul{
+    background-color: transparent;
+    list-style: none;
+    display: flex;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+li{
+    /* padding: 0.6rem 1.2rem; */
+    /* background-color:rtraed; */
+}
+a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+}
+a::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    border-radius: 100vw;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 760ms ease-out;
+    background-color: var(--primary-color);
+}
+li:hover a::after{
+    scale: 1 1;
+    transform-origin: left;
+}
+main{
+    min-height: calc(100svh - 72px);
+    display: grid;
+    grid-template-rows: 140px 1fr;
+    color: var(--word-color);
+}
+.now{
+    background-color: #232329;
+    padding-inline-start: 18rem;
+    padding-block-start: 1.9rem;
+    line-height: 2.5rem;
+}
+.now > h1{
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+.now span{
+    color: var(--secondary-color);
+}
+
+.now > div{
+    font-size: 1rem;
+    font-weight: 400;
+    word-spacing: 8px;
+    color: var(--word-link-color);
+}
+
+.now a:hover{
+    transition: color 450ms ease;
+    color: var(--secondary-color);
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-block: 50px ;
+}
+.title > h1{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.title > span{
+    width: 100%;
+    height: 5px;
+    border-radius: 100vw;
+    background-color: var(--third-color);
+
+    position: relative;
+}
+.title > span::after,
+.title > span::before{
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title > span::before{
+    width: 30%;
+    height: 100%;
+    border-radius: inherit;
+}
+.title > span::after{
+    width: 18px;
+    aspect-ratio: 1;
+    top: 50%;
+    z-index: 99;
+    transform: translate(-50%,-50%);
+}
+
+.rgist{
+    display: grid;
+    grid-template-columns: 30% 1fr 30%;
+}
+.cont{
+    grid-column: 3 / 2;
+    display: grid;
+    place-items: center;
+
+    /* row-gap: 1rem; */
+}
+.container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  .container header {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+  }
+  .container .form {
+    margin-top: 30px;
+  }
+  .form .input-box {
+    margin-top: 30px;
+    width: 100%;
+  }
+  input, .select-box{
+
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    color: var(--word-color);
+    transition: border 600ms ease-in;
+
+  }
+  .input-box label {
+    font-weight: 400;
+    color: var(--word-color);
+    display: grid;
+    gap: 1rem 2rem;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    outline: none;
+    color: var(--word-color);
+    transition: border 600ms ease-in;
+
+  }
+  .form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+ .form :where(.input-box input, .select-box, textarea):focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--secondary-color);
+  }
+  .form .column {
+    display: flex;
+    column-gap: 20px;
+  }
+  .form .gender-box {
+    margin-top: 20px;
+  }
+  .gender-box h3 {
+    color: var(--word-color);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+  }
+  .form .gender {
+    column-gap: 5px;
+  }
+  .gender input {
+    accent-color: #2cb8cb;
+    size: 10px;
+  }
+  .form :where(.gender input, .gender label) {
+    cursor: pointer;
+  }
+  .gender label {
+    color: #707070;
+  }
+ 
+  .select-box select {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+
+  .form button {
+    width: 100%;
+    height: 55px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #629298;
+  }
+  .form button:hover {
+    background: #446469;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .form .column {
+      flex-wrap: wrap;
+    }
+    .form :where(.gender-option, .gender) {
+      row-gap: 15px;
+    }
+  }
+  
